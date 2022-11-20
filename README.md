@@ -5,20 +5,20 @@
 4. Then on the frontend, plot a histogram of the 20 most occurring words. 
  
  ## Implementation:
- 1. src/App.js has Header and Footer components that are stored in src/components directory. \
+ 1. src/App.js has Header and Footer components that are stored in src/components directory. 
  Between header and Footer, it contains router with Two routes. Route '/' Takes you to Homepage. Route '/data' takes you to Histogram. 
- 2. src/pages/Home has Home.js and Home.css files. \
+ 2. src/pages/Home has Home.js and Home.css files. 
  -> This file has a submit button. When submit button is pressed, an axios request is sent to https://www.terriblytinytales.com/test.txt \
  -> the data received is passed to a function known as filterArray which takes a string, removes " ", "\n", "\t", "." from the string and finally makes an array \
- -> It is passed to a filter function to remove empty words. \
- -> After these steps, a filtered array is set in a state called "wordArray" \
+ -> It is passed to a filter function to remove empty words. 
+ -> After these steps, a filtered array is set in a state called "wordArray" 
  
- -> An independent useEffect which has wordArray in dependency array is there \
+ -> An independent useEffect which has wordArray in dependency array is there 
  -> It takes the wordArray, puts it in a map
  -> Map is then sorted and Top 20 values are taken out in two seperate arrays histogramDataRows, histogramDataColumns
  -> These two arrays are passed down to /data page as state
  
- 3. src/pages/Data has Data.js and Data.css \
+ 3. src/pages/Data has Data.js and Data.css 
  This page contains the Histogram. Data for histogram is taken out from location state. 'react-chart-histogram' library shows the Histogram.
  Link to Histogram Library - https://www.npmjs.com/package/react-chart-histogram
  
