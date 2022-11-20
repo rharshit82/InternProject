@@ -1,12 +1,12 @@
-#TTT Assignment
-1. On first load, only has a Submit button \
-2. On clicking on Submit, it will fetch the contents of https://www.terriblytinytales.com/test.txt \
+# TTT Assignment
+1. On first load, only has a Submit button 
+2. On clicking on Submit, it will fetch the contents of https://www.terriblytinytales.com/test.txt 
 3. Parse the content and find the frequency of occurrence of each word (some words will occur only once, some twice and so on, and some will occur N times) \
-4. Then on the frontend, plot a histogram of the 20 most occurring words. \
+4. Then on the frontend, plot a histogram of the 20 most occurring words. 
  
- ##Implementation:
+ ## Implementation:
  1. src/App.js has Header and Footer components that are stored in src/components directory. \
- Between header and Footer, it contains router with Two routes. Route '/' Takes you to Homepage. Route '/data' takes you to Histogram. \
+ Between header and Footer, it contains router with Two routes. Route '/' Takes you to Homepage. Route '/data' takes you to Histogram. 
  2. src/pages/Home has Home.js and Home.css files. \
  -> This file has a submit button. When submit button is pressed, an axios request is sent to https://www.terriblytinytales.com/test.txt \
  -> the data received is passed to a function known as filterArray which takes a string, removes " ", "\n", "\t", "." from the string and finally makes an array \
