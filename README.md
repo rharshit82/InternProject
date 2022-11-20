@@ -1,6 +1,32 @@
-# Getting Started with Create React App
+#TTT Assignment
+1. On first load, only has a Submit button \
+2. On clicking on Submit, it will fetch the contents of https://www.terriblytinytales.com/test.txt \
+3. Parse the content and find the frequency of occurrence of each word (some words will occur only once, some twice and so on, and some will occur N times) \
+4. Then on the frontend, plot a histogram of the 20 most occurring words. \
+ 
+ ##Implementation:
+ 1. src/App.js has Header and Footer components that are stored in src/components directory. \
+ Between header and Footer, it contains router with Two routes. Route '/' Takes you to Homepage. Route '/data' takes you to Histogram. \
+ 2. src/pages/Home has Home.js and Home.css files. \
+ -> This file has a submit button. When submit button is pressed, an axios request is sent to https://www.terriblytinytales.com/test.txt \
+ -> the data received is passed to a function known as filterArray which takes a string, removes " ", "\n", "\t", "." from the string and finally makes an array \
+ -> It is passed to a filter function to remove empty words. \
+ -> After these steps, a filtered array is set in a state called "wordArray" \
+ 
+ -> An independent useEffect which has wordArray in dependency array is there \
+ -> It takes the wordArray, puts it in a map
+ -> Map is then sorted and Top 20 values are taken out in two seperate arrays histogramDataRows, histogramDataColumns
+ -> These two arrays are passed down to /data page as state
+ 
+ 3. src/pages/Data has Data.js and Data.css \
+ This page contains the Histogram. Data for histogram is taken out from location state. 'react-chart-histogram' library shows the Histogram.
+ Link to Histogram Library - https://www.npmjs.com/package/react-chart-histogram
+ 
+ ## Packages Used
+ 1. react-chart-histogram for Histogram
+ 2. axios For sending request
+ 3. react-router-dom for Routing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -14,57 +40,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
