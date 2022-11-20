@@ -1,0 +1,15 @@
+.HomeDiv{
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.HomeButton{
+    padding: 1.5rem 2.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid lightgrey;
+}
+.HomeButton:hover{
+    cursor: pointer;
+    background-color: lightgrey;
+}

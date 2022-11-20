@@ -1,0 +1,1 @@
+export const isUsable = param => param !== undefined && param !== null && param.length > 0
